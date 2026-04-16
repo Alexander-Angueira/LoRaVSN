@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoRaVSN | UPRM Capstone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <h1 class="logo">LoRa<span>VSN</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#verification">Verification</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="https://github.com/pedro-gracia04/capstone-spring2026" target="_blank" class="btn">View GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>LoRaVSN</h2>
+            <p>A LoRaWAN ML-Assisted Image Transmission Framework for IoT Computer Vision Applications.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <section id="about" class="content-section">
+            <h2>About the Framework</h2>
+            <p>LoRaVSN is a modular, ML-assisted image transmission framework designed to bridge the "Connectivity Gap" in remote monitoring. While traditional computer vision relies on high-bandwidth Wi-Fi, LoRaVSN enables transmission over the long-range, low-power LoRaWAN protocol. This framework serves as the critical communication link for <strong>Project PARKS</strong>, moving visual data from remote sensing points to inference gateways.</p>
+        </section>
+
+        <section id="architecture" class="content-section">
+            <h2>System Architecture</h2>
+            <p>The framework follows a specialized layered design to handle the 240-byte payload limit of the REYAX RYLR998 module while maintaining modularity and scalability.</p>
+            
+            <div class="architecture-grid">
+                <div class="arch-item">
+                    <strong>Sensing Layer</strong>
+                    <p>ESP32 nodes with OV2640 cameras capturing 320x240 grayscale imagery.</p>
+                </div>
+                <div class="arch-item">
+                    <strong>On-Device Pipeline</strong>
+                    <p>ROI extraction via COCO bounding boxes, K-Clusters dimensionality reduction, and C++ optimized compression.</p>
+                </div>
+                <div class="arch-item">
+                    <strong>Communication Layer</strong>
+                    <p>Custom UART-based messaging protocol with typed headers (DAT, ACK, ERR) for reliable multi-packet transmission.</p>
+                </div>
+                <div class="arch-item">
+                    <strong>Edge Processing</strong>
+                    <p>Raspberry Pi 5 gateway performing decryption and ML-assisted reconstruction to restore image quality.</p>
+                </div>
+            </div>
+
+            <div class="diagram-placeholder" style="margin-top: 20px; text-align: center; border: 1px dashed #ccc; padding: 20px;">
+                <p><strong>Logical Data Flow</strong></p>
+                <p>Capture &rarr; Segment &rarr; Compress &rarr; Encrypt &rarr; Packetize &rarr; LoRaWAN &rarr; Reassemble &rarr; Reconstruct</p>
+            </div>
+        </section>
+
+        <section id="constraints" class="content-section">
+            <h2>Engineering Constraints & Standards</h2>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h4>Memory Management</h4>
+                    <p>The ESP32 provides 320 KB of internal SRAM. We utilize dynamic heap allocation (malloc) to manage 76,800-byte grayscale buffers safely.</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Bandwidth Bottleneck</h4>
+                    <p>The REYAX RYLR998 limits payloads to 240 bytes. Our protocol uses chunking and sequencing to rebuild full frames at the gateway.</p>
+                </div>
+                <div class="spec-card">
+                    <h4>LoRaWAN Standard</h4>
+                    <p>Operates on the 915 MHz band following the LoRaWAN specification for long-range, low-power bi-directional communication.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="verification" class="content-section">
+            <h2>Technical Verification</h2>
+            <p>The framework is validated through hardware-in-the-loop testing. Below is the verification of our UART handshake and memory allocation logic.</p>
+            
+            <div class="test-gallery">
+                <div class="test-item">
+                    <img src="img/terminal_log.png" alt="Terminal log showing successful transfer">
+                    <p class="caption"><strong>Figure 1:</strong> Verification of the 2-way handshake. A 76.8KB grayscale frame was successfully received in ~7 seconds.</p>
+                </div>
+                
+                <div class="test-item">
+                    <img src="img/system_diagram.png" alt="System Architecture Diagram">
+                    <p class="caption"><strong>Figure 2:</strong> System Architecture Diagram as defined in the Milestone 1 Progress Report.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="milestones" class="content-section">
+            <h2>Project Milestones</h2>
+            <div class="table-responsive">
+                <table class="milestone-table">
+                    <thead>
+                        <tr>
+                            <th>Milestone</th>
+                            <th>Deliverable</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>M1: Model Training</td>
+                            <td>Labeled PKLot Dataset & Fine-Tuned CNNs</td>
+                            <td><span class="status-tag completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>M3: System Interfaces</td>
+                            <td>Input Simulation Tool & CLI Admin Control</td>
+                            <td><span class="status-tag verified">Verified</span></td>
+                        </tr>
+                        <tr>
+                            <td>M4: Integration</td>
+                            <td>Full-Frame LoRaWAN Transmission</td>
+                            <td><span class="status-tag progress">Testing & Validation</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="team" class="content-section">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Alexander A. Angueira Bretón</h3>
+                    <p class="role">Embedded Systems & Hardware Integration</p>
+                    <p>Lead for ESP32 firmware, dynamic SRAM management, and UART handshake protocols.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Pedro J. Gracia Ramos</h3>
+                    <p class="role">Data Compression & CLI Development</p>
+                    <p>Lead for dimensionality reduction, image segmentation logic, and dataset processing.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Alexa M. Zaragoza Torres</h3>
+                    <p class="role">Frontend Delivery & System Validation</p>
+                    <p>Lead for system validation, unit testing, and technical documentation management.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LoRaVSN Team. University of Puerto Rico at Mayagüez.</p>
+    </footer>
+
+</body>
+</html>
