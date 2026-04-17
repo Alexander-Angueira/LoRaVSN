@@ -9,19 +9,21 @@
 <body>
 
     <header>
-        <div class="nav-container">
-            <h1 class="logo">LoRa<span>VSN</span></h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#architecture">Architecture</a></li>
-                    <li><a href="#verification">Verification</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="https://github.com/pedro-gracia04/capstone-spring2026" target="_blank" class="btn">View GitHub</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="nav-container">
+        <h1 class="logo">LoRa<span>VSN</span></h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#constraints">Constraints</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#setup">System Setup</a></li>
+                <li><a href="#verification">Performance</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="https://github.com/pedro-gracia04/capstone-spring2026" target="_blank" class="btn">View GitHub</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <section class="hero">
         <div class="container">
@@ -35,6 +37,24 @@
         <section id="about" class="content-section">
             <h2>About the Framework</h2>
             <p>LoRaVSN is a modular, ML-assisted image transmission framework designed to bridge the "Connectivity Gap" in remote monitoring. While traditional computer vision relies on high-bandwidth Wi-Fi, LoRaVSN enables transmission over the long-range, low-power LoRaWAN protocol. This framework serves as the critical communication link for <strong>Project PARKS</strong>, moving visual data from remote sensing points to inference gateways.</p>
+        </section>
+
+        <section id="constraints" class="content-section">
+            <h2>Engineering Constraints & Standards</h2>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h4>Memory Management</h4>
+                    <p>The ESP32 provides 320 KB of internal SRAM. We utilize dynamic heap allocation (malloc) to manage 76,800-byte grayscale buffers safely.</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Bandwidth Bottleneck</h4>
+                    <p>The REYAX RYLR998 limits payloads to 240 bytes. Our protocol uses chunking and sequencing to rebuild full frames at the gateway.</p>
+                </div>
+                <div class="spec-card">
+                    <h4>LoRaWAN Standard</h4>
+                    <p>Operates on the 915 MHz band following the LoRaWAN specification for long-range, low-power bi-directional communication.</p>
+                </div>
+            </div>
         </section>
 
         <section id="architecture" class="content-section">
@@ -56,48 +76,48 @@
                 </div>
                 <div class="arch-item">
                     <strong>Edge Processing</strong>
-                    <p>Raspberry Pi 5 gateway performing decryption and ML-assisted reconstruction to restore image quality.</p>
+                    <p>Raspberry Pi 5 gateway performing ML-assisted reconstruction to restore image quality.</p>
                 </div>
             </div>
 
             <div class="diagram-placeholder" style="margin-top: 20px; text-align: center; border: 1px dashed #ccc; padding: 20px;">
                 <p><strong>Logical Data Flow</strong></p>
-                <p>Capture &rarr; Segment &rarr; Compress &rarr; Encrypt &rarr; Packetize &rarr; LoRaWAN &rarr; Reassemble &rarr; Reconstruct</p>
+                <p>Capture &rarr; Segment &rarr; Compress &rarr; Packetize &rarr; LoRaWAN &rarr; Reassemble &rarr; Reconstruct</p>
             </div>
         </section>
 
-        <section id="constraints" class="content-section">
-            <h2>Engineering Constraints & Standards</h2>
-            <div class="specs-grid">
-                <div class="spec-card">
-                    <h4>Memory Management</h4>
-                    <p>The ESP32 provides 320 KB of internal SRAM. We utilize dynamic heap allocation (malloc) to manage 76,800-byte grayscale buffers safely.</p>
+        <section id="setup" class="content-section">
+            <h2>System Hardware Setup</h2>
+            <p>Physical implementation of the LoRaVSN framework using low-power embedded components and high-performance edge gateways.</p>
+            <div class="test-gallery">
+                <div class="test-item">
+                    <img src="img/remotenode.jpg" alt="Remote Node Hardware">
+                    <p class="caption"><strong>Remote Node:</strong> ESP32-WROOM-32 integrated with the REYAX RYLR998 LoRa module.</p>
                 </div>
-                <div class="spec-card">
-                    <h4>Bandwidth Bottleneck</h4>
-                    <p>The REYAX RYLR998 limits payloads to 240 bytes. Our protocol uses chunking and sequencing to rebuild full frames at the gateway.</p>
-                </div>
-                <div class="spec-card">
-                    <h4>LoRaWAN Standard</h4>
-                    <p>Operates on the 915 MHz band following the LoRaWAN specification for long-range, low-power bi-directional communication.</p>
+                <div class="test-item">
+                    <img src="img/gateway.jpg" alt="Gateway Hardware">
+                    <p class="caption"><strong>Gateway:</strong> Raspberry Pi 5 acting as the central receiver and ML-reconstruction engine.</p>
                 </div>
             </div>
         </section>
 
         <section id="verification" class="content-section">
-            <h2>Technical Verification</h2>
-            <p>The framework is validated through hardware-in-the-loop testing. Below is the verification of our UART handshake and memory allocation logic.</p>
+            <h2>Performance Verification</h2>
+            <p>The framework is validated through hardware-in-the-loop testing. We benchmarked transmission timing, packet loss, and reconstruction quality using the PKLot dataset.</p>
             
             <div class="test-gallery">
                 <div class="test-item">
-                    <img src="img/terminal_log.png" alt="Terminal log showing successful transfer">
-                    <p class="caption"><strong>Figure 1:</strong> Verification of the 2-way handshake. A 76.8KB grayscale frame was successfully received in ~7 seconds.</p>
+                    <img src="img/graph1.jpg" alt="Transmission Timing Graph">
+                    <p class="caption"><strong>TX/RX Analysis:</strong> Real-time benchmarking of data throughput and latency across the LoRaWAN link.</p>
                 </div>
-                
                 <div class="test-item">
-                    <img src="img/system_diagram.png" alt="System Architecture Diagram">
-                    <p class="caption"><strong>Figure 2:</strong> System Architecture Diagram as defined in the Milestone 1 Progress Report.</p>
+                    <img src="img/graph2.jpg" alt="Packet Loss Analysis">
+                    <p class="caption"><strong>Reliability:</strong> Packet delivery rate and loss analysis under variable payload sizes.</p>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://drive.google.com/file/d/1oK7BthLtdXV1Fks7mUM84rF34LfXjvTu/view?usp=sharing" target="_blank" class="btn">View Raw Performance Data (CSV)</a>
             </div>
         </section>
 
@@ -107,17 +127,17 @@
                 <div class="team-member">
                     <h3>Alexander A. Angueira Bretón</h3>
                     <p class="role">Embedded Systems & Hardware Integration</p>
-                    <p>Lead for ESP32 firmware, dynamic SRAM management, and UART handshake protocols.</p>
+                    <p>Lead for ESP32 firmware development and protocol design.</p>
                 </div>
                 <div class="team-member">
                     <h3>Pedro J. Gracia Ramos</h3>
                     <p class="role">Data Compression & CLI Development</p>
-                    <p>Lead for dimensionality reduction, image segmentation logic, and dataset processing.</p>
+                    <p>Lead of LoRa system and ML workflows.</p>
                 </div>
                 <div class="team-member">
                     <h3>Alexa M. Zaragoza Torres</h3>
                     <p class="role">Frontend Delivery & System Validation</p>
-                    <p>Lead for system validation, unit testing, and technical documentation management.</p>
+                    <p>Lead of compression systems, system validation, and technical documentation management.</p>
                 </div>
             </div>
         </section>
