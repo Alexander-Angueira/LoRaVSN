@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['raspberry_20pi_205_208gb_20loravsn_20gateway_0',['Raspberry Pi 5 (8GB) LoRaVSN Gateway',['../md_loravision_2docs_2gateway__setup.html',1,'']]],
+  ['raspberry_20pi_205_20basic_20setup_20instructions_1',['Raspberry Pi 5 Basic Setup Instructions',['../md_loravision_2docs_2gateway__setup.html#autotoc_md9',1,'']]],
+  ['raspberry_20pi_205_20project_20structure_2',['Raspberry Pi 5 Project Structure',['../md_loravision_2docs_2gateway__setup.html#autotoc_md12',1,'']]],
+  ['receive_5fmessage_3',['receive_message',['../classsrc_1_1loravision_1_1lora__radio_1_1_lo_ra_radio.html#a510a8b8ddaeb15fdae17da3b7170d1b8',1,'src::loravision::lora_radio::LoRaRadio']]],
+  ['receivemessage_4',['ReceiveMessage',['../class_lo_ra_radio.html#a02720729e4364a8f080dab94b60b7b1d',1,'LoRaRadio']]],
+  ['receivemessagetests_5',['ReceiveMessageTests',['../classtest__lora__radio_1_1_receive_message_tests.html',1,'test_lora_radio']]],
+  ['remote_20node_6',['Generic ESP-WROOM-32 LoRaVSN Remote Node',['../md_loravision_2docs_2remote__node__setup.html',1,'']]],
+  ['remote_20node_20—_20image_20segmentation_7',['Remote Node — Image Segmentation',['../dir_7d09e708cd5f380d349fb2c154db2f54.html#autotoc_md57',1,'']]],
+  ['remote_20nodes_8',['Sending to multiple Remote Nodes',['../dir_9b1e86b0ae743ebb4000384b8580537d.html#autotoc_md41',1,'']]],
+  ['request_9',['Start an Image Data Request or an ROI Data Request',['../md_loravision_2docs_2loravsn__messages.html#autotoc_md17',1,'']]],
+  ['request_20image_20data_20retransmission_10',['Request Image Data Retransmission',['../md_loravision_2docs_2loravsn__messages.html#autotoc_md18',1,'']]],
+  ['request_20or_20an_20roi_20data_20request_11',['Start an Image Data Request or an ROI Data Request',['../md_loravision_2docs_2loravsn__messages.html#autotoc_md17',1,'']]],
+  ['requirements_12',['Requirements',['../index.html#autotoc_md7',1,'Hardware Requirements'],['../dir_9b1e86b0ae743ebb4000384b8580537d.html#autotoc_md38',1,'Requirements']]],
+  ['retransmission_13',['Request Image Data Retransmission',['../md_loravision_2docs_2loravsn__messages.html#autotoc_md18',1,'']]],
+  ['roi_20data_20request_14',['Start an Image Data Request or an ROI Data Request',['../md_loravision_2docs_2loravsn__messages.html#autotoc_md17',1,'']]],
+  ['rotate_15',['rotate',['../structjpeg__dec__config__t.html#ac3019f87e1ffef716154238ac15cc124',1,'jpeg_dec_config_t::rotate'],['../structjpeg__info.html#a3d28fb30a82a770ef2740f602e641e38',1,'jpeg_info::rotate']]],
+  ['rpi5_16',['Running LoRaVSN in the RPI5',['../md_loravision_2docs_2gateway__setup.html#autotoc_md11',1,'']]],
+  ['running_20loravsn_20in_20the_20esp_2032_17',['Running LoRaVSN in the ESP-32',['../md_loravision_2docs_2remote__node__setup.html#autotoc_md30',1,'']]],
+  ['running_20loravsn_20in_20the_20rpi5_18',['Running LoRaVSN in the RPI5',['../md_loravision_2docs_2gateway__setup.html#autotoc_md11',1,'']]],
+  ['running_20tests_19',['Running Tests',['../dir_7d09e708cd5f380d349fb2c154db2f54.html#autotoc_md65',1,'']]],
+  ['running_20the_20examples_20',['Running the examples',['../dir_9b1e86b0ae743ebb4000384b8580537d.html#autotoc_md40',1,'']]],
+  ['running_20the_20tests_21',['Running the tests',['../dir_9b1e86b0ae743ebb4000384b8580537d.html#autotoc_md42',1,'']]]
+];

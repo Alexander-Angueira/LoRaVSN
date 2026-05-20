@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['s2_0',['Test on chip ESP32-S2',['../dir_8db429ad235cc0903d35403375ce42ca.html#autotoc_md51',1,'']]],
+  ['s3_1',['Test on chip ESP32-S3',['../dir_8db429ad235cc0903d35403375ce42ca.html#autotoc_md48',1,'']]],
+  ['scale_2',['scale',['../structjpeg__dec__config__t.html#accfa2164a85b051b67b15eba66a16c86',1,'jpeg_dec_config_t']]],
+  ['segmentation_3',['Remote Node — Image Segmentation',['../dir_7d09e708cd5f380d349fb2c154db2f54.html#autotoc_md57',1,'']]],
+  ['segmentationstatus_4',['&lt;span class=&quot;tt&quot;&gt;SegmentationStatus&lt;/span&gt;',['../dir_7d09e708cd5f380d349fb2c154db2f54.html#autotoc_md61',1,'']]],
+  ['send_20a_20command_5',['Send a Command',['../md_loravision_2docs_2loravsn__messages.html#autotoc_md20',1,'']]],
+  ['send_5fmessage_6',['send_message',['../classsrc_1_1loravision_1_1lora__radio_1_1_lo_ra_radio.html#a9dece9cd040baa22d87a6562a0f78d61',1,'src::loravision::lora_radio::LoRaRadio']]],
+  ['sending_20to_20multiple_20remote_20nodes_7',['Sending to multiple Remote Nodes',['../dir_9b1e86b0ae743ebb4000384b8580537d.html#autotoc_md41',1,'']]],
+  ['sendmessage_8',['SendMessage',['../class_lo_ra_radio.html#a280f924885318435ee513c3bf4e936ac',1,'LoRaRadio']]],
+  ['sendmessagetests_9',['SendMessageTests',['../classtest__lora__radio_1_1_send_message_tests.html',1,'test_lora_radio']]],
+  ['setrecipientaddress_10',['SetRecipientAddress',['../class_outgoing_message.html#ad32b704386df4fe3a36a1cb7197e9faf',1,'OutgoingMessage']]],
+  ['settings_11',['Network and User Settings',['../md_loravision_2docs_2gateway__setup.html#autotoc_md10',1,'']]],
+  ['setup_20instructions_12',['Raspberry Pi 5 Basic Setup Instructions',['../md_loravision_2docs_2gateway__setup.html#autotoc_md9',1,'']]],
+  ['simulation_20tool_13',['ESP32 Input Simulation Tool',['../md_loravision_2docs_2simulation__tool.html',1,'']]],
+  ['src_3a_3aloravision_3a_3aconfig_14',['config',['../namespacesrc_1_1loravision_1_1config.html',1,'src::loravision']]],
+  ['src_3a_3aloravision_3a_3alora_5fradio_15',['lora_radio',['../namespacesrc_1_1loravision_1_1lora__radio.html',1,'src::loravision']]],
+  ['src_3a_3aloravision_3a_3amessage_16',['message',['../namespacesrc_1_1loravision_1_1message.html',1,'src::loravision']]],
+  ['src_5ftype_17',['src_type',['../structjpeg__info.html#a5a7c71b1b3ab1bc62a9ae4728fe45d1f',1,'jpeg_info']]],
+  ['start_20an_20image_20data_20request_20or_20an_20roi_20data_20request_18',['Start an Image Data Request or an ROI Data Request',['../md_loravision_2docs_2loravsn__messages.html#autotoc_md17',1,'']]],
+  ['structure_19',['Raspberry Pi 5 Project Structure',['../md_loravision_2docs_2gateway__setup.html#autotoc_md12',1,'']]],
+  ['subsampling_20',['subsampling',['../structjpeg__info.html#a1a25ae82679588d9cfd57263c0f4acde',1,'jpeg_info']]],
+  ['supported_20chip_21',['Supported chip',['../dir_8db429ad235cc0903d35403375ce42ca.html#autotoc_md56',1,'']]]
+];

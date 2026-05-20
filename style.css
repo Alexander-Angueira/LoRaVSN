@@ -232,3 +232,25 @@ footer {
     nav ul li { margin: 0 10px; }
     .hero h2 { font-size: 2.2rem; }
 }
+
+/* Enlaces Especiales de Navegación */
+.nav-link-special {
+    font-weight: 600;
+    color: var(--primary-color) !important;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-link-special:hover {
+    color: var(--accent-color) !important;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Ajuste de Galería de Hardware */
+.hardware-gallery img {
+    transition: transform 0.3s ease;
+}
+
+.hardware-gallery img:hover {
+    transform: scale(1.03);
+}
